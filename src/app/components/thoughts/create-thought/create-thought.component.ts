@@ -12,7 +12,7 @@ export class CreateThoughtComponent {
   thought:Thought = {
     content: '',
     authorship: '',
-    model: 'model1'
+    model: 'modelo1'
   }
 
   constructor(

@@ -8,10 +8,10 @@ import { Thought } from '../thought';
 })
 export class ThoughtComponent {
   @Input() thought:Thought = {
-    id:0,
+    id: 0,
     content: '',
     authorship: '',
-    model: 'modelo3'
+    model: ''
   }
 
   constructor() { }
@@ -25,4 +25,5 @@ export class ThoughtComponent {
     }
     return 'thought-p'
   }
+  
 }
