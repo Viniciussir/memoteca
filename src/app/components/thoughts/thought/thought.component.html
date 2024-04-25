@@ -1,0 +1,16 @@
+<div class="thought {{ thought.model }} ff-roboto-mono" [ngClass]="widthThought()">
+
+    <img src="/assets/image/{{ thought.model }}.png" alt="Aspas coloridas">
+    <p class="content">{{ thought.content }}</p>
+    <p class="authorship"><b>{{ thought.authorship }}</b></p>
+
+    <div class="actions">
+        <button class="button-edit">
+            <img src="/assets/image/icone-editar.png" alt="Ícone de editar">
+        </button>
+        <button class="button-delete">
+            <img src="/assets/image/icone-excluir.png" alt="Ícone de excluir">
+        </button>
+    </div>
+
+</div>
