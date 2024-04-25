@@ -6,9 +6,9 @@
 
     <div class="actions">
         <button class="button-edit">
-            <img src="/assets/image/icone-editar.png" alt="Ícone de editar">
+            <img src="/assets/image/icone-editar.png" routerLink="/pensamentos/editarPensamento/{{thought.id}}" alt="Ícone de editar">
         </button>
-        <button class="button-delete">
+        <button class="button-delete" routerLink="/thought/deleteThought/{{thought.id}}">
             <img src="/assets/image/icone-excluir.png" alt="Ícone de excluir">
         </button>
     </div>

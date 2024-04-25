@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Thought } from '../thought';
 
 @Component({
   selector: 'app-thought',
@@ -6,10 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './thought.component.css'
 })
 export class ThoughtComponent {
-  @Input() thought = {
-    content: 'I love Angular',
-    authorship: 'Nay',
-    model: 'model3'
+  @Input() thought:Thought = {
+    id:0,
+    content: '',
+    authorship: '',
+    model: 'modelo3'
   }
 
   constructor() { }

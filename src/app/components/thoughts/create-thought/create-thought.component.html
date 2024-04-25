@@ -13,7 +13,7 @@
             id="thought"
             name="thought"
             placeholder="Digite o pensamento"
-            [(ngModel)]="thought.conteudo">
+            [(ngModel)]="thought.content">
 
         <label for="authorship">Autoria ou fonte</label>
         <input
@@ -32,7 +32,7 @@
                     <input
                         type="radio"
                         id="model1"
-                        value="model1"
+                        value="modelo1"
                         name="model-card"
                         [(ngModel)]="thought.model">
                     <div class="custom-radio">
@@ -43,7 +43,7 @@
                 <span>Prévia:</span>
                 <div class="model model1 ff-roboto-mono">
                     <img src="../../../../assets/image/modelo1.png" alt="Aspas azuis">
-                    <p class="content">{{ thought.conteudo }}</p>
+                    <p class="content">{{ thought.content }}</p>
                     <p class="authorship"><b>{{ thought.authorship }}</b></p>
                 </div>
 
@@ -54,7 +54,7 @@
                     <input
                         type="radio"
                         id="model2"
-                        value="model2"
+                        value="modelo2"
                         name="model-card"
                         [(ngModel)]="thought.model">
                     <div class="custom-radio">
@@ -65,7 +65,7 @@
                 <span>Prévia:</span>
                 <div class="model model2 ff-roboto-mono">
                     <img src="../../../../assets/image/modelo2.png" alt="Aspas azul claro">
-                    <p class="content">{{ thought.conteudo }}</p>
+                    <p class="content">{{ thought.content }}</p>
                     <p class="authorship"><b>{{ thought.authorship }}</b></p>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <input
                         type="radio"
                         id="model3"
-                        value="model3"
+                        value="modelo3"
                         name="model-card"
                         [(ngModel)]="thought.model">
                     <div class="custom-radio">
@@ -86,7 +86,7 @@
                 <span>Prévia:</span>
                 <div class="model model3 ff-roboto-mono">
                     <img src="../../../../assets/image/modelo3.png" alt="Aspas verdes">
-                    <p class="content">{{ thought.conteudo }}</p>
+                    <p class="content">{{ thought.content }}</p>
                     <p class="authorship"><b>{{ thought.authorship }}</b></p>
                 </div>
             </div>
@@ -95,7 +95,7 @@
 
         <div class="actions">
             <button (click)="createThought()" class="button">Salvar</button>
-            <button (click)="cancel()" class="button" routerLink="/list-thought">Cancelar</button>
+            <button (click)="cancel()" class="button">Cancelar</button>
         </div>
     </form>
 
