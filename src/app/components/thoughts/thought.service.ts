@@ -14,10 +14,13 @@ export class ThoughtService {
     private http: HttpClient
   ) { }
 
-  getThought(currentPage:number, limitPage:number): Observable<Thought[]> {
+  getThought(currentPage:number, limitPage:number, filter:string): Observable<Thought[]> {
     let params = new HttpParams()
-      .set('_page', currentPage)
-      .set('_limit', limitPage)
+    .set('_page', currentPage)
+    .set('_limit', limitPage)
+    if(filter.trim().length > 2){
+      params = params.set('q', filter)
+    }
     return this.http.get<Thought[]>(this.API, {params})
   }
 

@@ -1,8 +1,22 @@
 <section class="container">
 
   <header class="header d-flex">
+
+    <div class="thought-search">
+      <input 
+        type="search"
+        class="filter"
+        placeholder="O que você procura?"
+        autofocus
+        [(ngModel)]="filter"
+        (keyup)="searchThought()">
+
+      <img src="../../../../assets/image/lupa.png" alt="Lupa Azul">
+    </div>
+
     <h2 class="ff-inter">Meu Mural</h2>
     <button routerLink="/create-thought" class="button">Adicionar pensamento</button>
+
   </header>
 
   <div class="mural" *ngIf="listThoughts.length > 0, else noThoughts">

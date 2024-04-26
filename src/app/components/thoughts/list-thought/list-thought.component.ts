@@ -15,23 +15,33 @@ export class ListThoughtComponent {
 
   hasMoreThoughts:boolean = true;
 
+  filter:string = '';
+
   constructor(
     private thoughtService: ThoughtService
   ) { }
 
   ngOnInit(): void {
-    this.thoughtService.getThought(this.currentPage, this.limitPage).subscribe((listThoughts) => {
+    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter).subscribe((listThoughts) => {
       this.listThoughts = listThoughts
     });
   }
 
   loadMoreThoughts(){
-    this.thoughtService.getThought(++this.currentPage, this.limitPage)
+    this.thoughtService.getThought(++this.currentPage, this.limitPage, this.filter)
       .subscribe(listThoughts => {
       this.listThoughts.push(...listThoughts);
       if(!listThoughts.length){
         this.hasMoreThoughts = false;
       }
+    })
+  }
+
+  searchThought(){
+    this.currentPage = 1;
+    this.hasMoreThoughts = true;
+    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter).subscribe(listThoughts => {
+      this.listThoughts = listThoughts;
     })
   }
 
