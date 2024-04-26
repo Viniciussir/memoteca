@@ -1,3 +1,4 @@
+import { ThoughtService } from './../thought.service';
 import { Component, Input } from '@angular/core';
 import { Thought } from '../thought';
 
@@ -11,10 +12,13 @@ export class ThoughtComponent {
     id: 0,
     content: '',
     authorship: '',
-    model: ''
+    model: '',
+    favorite: false
   }
 
-  constructor() { }
+  constructor(
+    private thoughtService:ThoughtService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +28,18 @@ export class ThoughtComponent {
       return 'thought-g'
     }
     return 'thought-p'
+  }
+
+  changeIconFavorite(): string{
+    if(this.thought.favorite == false){
+      return 'inativo'
+    } else {
+      return 'ativo'
+    }
+  }
+
+  updateFavorites(){
+    this.thoughtService.changeFavorite(this.thought).subscribe();
   }
   
 }

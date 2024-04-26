@@ -14,7 +14,8 @@ export class DeleteThoughtComponent {
     id: 0,
     content: '',
     authorship: '',
-    model: ''
+    model: '',
+    favorite: false
   }
 
   constructor(

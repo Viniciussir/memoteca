@@ -5,6 +5,10 @@
     <p class="authorship"><b>{{ thought.authorship }}</b></p>
 
     <div class="actions">
+        <button class="button-favorite" (click)="updateFavorites()">
+            <img src="../../../../assets/image/icone-favorito-{{ changeIconFavorite() }}.png" 
+                alt="Ícone favorito {{ changeIconFavorite }}">
+        </button>
         <button class="button-edit">
             <img src="/assets/image/icone-editar.png" routerLink="/thought/editThought/{{thought.id}}" alt="Ícone de editar">
         </button>

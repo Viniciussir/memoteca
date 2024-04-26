@@ -29,7 +29,8 @@ export class CreateThoughtComponent {
         Validators.required,
         Validators.minLength(3)
       ])],
-      model: ['modelo3']
+      model: ['modelo3'], 
+      favorite:[false]
     })
   }
 

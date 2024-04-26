@@ -2,86 +2,100 @@
   "thought": [
     {
       "id": 1,
-      "content": "Que bom que vc veio De novo ",
+      "content": "Que bom que vc veio",
       "authorship": "Nay Teste",
-      "model": "modelo2"
+      "model": "modelo2",
+      "favorite": true
     },
     {
       "id": 2,
       "content": "Estudando Angular",
       "authorship": "Dev Alura",
-      "model": "modelo1"
+      "model": "modelo1",
+      "favorite": true
     },
     {
       "id": 3,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": true
     },
     {
       "id": 4,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": false
     },
     {
       "id": 5,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": false
     },
     {
       "id": 6,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": false
     },
     {
       "id": 7,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": false
     },
     {
       "id": 8,
       "content": "Angular é o melhor'",
       "authorship": "Dev Alura",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": false
     },
     {
       "content": "Estou pensando que estou feliz",
       "authorship": "Teste",
       "model": "modelo2",
+      "favorite": false,
       "id": 9
     },
     {
       "content": "Estou pensando que estou feliz",
       "authorship": "Teste",
       "model": "modelo2",
+      "favorite": false,
       "id": 10
     },
     {
       "content": "Estou pensando que estou feliz",
       "authorship": "Teste",
       "model": "modelo2",
+      "favorite": false,
       "id": 11
     },
     {
       "content": "Estou pensando que estou feliz",
       "authorship": "Teste",
       "model": "modelo2",
+      "favorite": false,
       "id": 12
     },
     {
       "content": "Estou pensando que estou feliz",
       "authorship": "Teste",
       "model": "modelo2",
+      "favorite": false,
       "id": 13
     },
     {
       "content": "Estou pensando",
       "authorship": "Vinicius Scampini",
       "model": "modelo2",
+      "favorite": false,
       "id": 14
     }
   ]
