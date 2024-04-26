@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Thought } from '../thought';
 import { ThoughtService } from '../thought.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-thought',
@@ -17,18 +18,33 @@ export class ListThoughtComponent {
 
   filter:string = '';
 
+  favorite:boolean = false;
+
+  listFavorite:Thought [] = [];
+  
+  title:string = 'Meu Mural';
+
   constructor(
-    private thoughtService: ThoughtService
+    private thoughtService: ThoughtService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter).subscribe((listThoughts) => {
+   this.loadThoughts();
+  }
+
+  loadThoughts(){
+    this.title = 'Meu Mural'; 
+    this.favorite = false;
+    this.currentPage = 1;
+     this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter, this.favorite)
+    .subscribe((listThoughts) => {
       this.listThoughts = listThoughts
     });
   }
 
   loadMoreThoughts(){
-    this.thoughtService.getThought(++this.currentPage, this.limitPage, this.filter)
+    this.thoughtService.getThought(++this.currentPage, this.limitPage, this.filter, this.favorite)
       .subscribe(listThoughts => {
       this.listThoughts.push(...listThoughts);
       if(!listThoughts.length){
@@ -40,8 +56,21 @@ export class ListThoughtComponent {
   searchThought(){
     this.currentPage = 1;
     this.hasMoreThoughts = true;
-    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter).subscribe(listThoughts => {
+    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter, this.favorite)
+    .subscribe(listThoughts => {
       this.listThoughts = listThoughts;
+    })
+  }
+
+  getFavorite(){
+    this.title = 'Meus Favoritos'; 
+    this.hasMoreThoughts = true;
+    this.currentPage = 1;
+    this.favorite = true;
+    this.thoughtService.getThought(this.currentPage, this.limitPage, this.filter, this.favorite)
+    .subscribe(listFavoriteThought =>{
+      this.listThoughts = listFavoriteThought;
+      this.listFavorite = listFavoriteThought;
     })
   }
 

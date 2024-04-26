@@ -14,14 +14,21 @@
       <img src="../../../../assets/image/lupa.png" alt="Lupa Azul">
     </div>
 
-    <h2 class="ff-inter">Meu Mural</h2>
-    <button routerLink="/create-thought" class="button">Adicionar pensamento</button>
+    <h2 class="ff-inter">{{ title }}</h2>
+    <div class="buttons">
+      <button class="button" (click)="loadThoughts()">Meu Mural</button>
+      <button class="button" (click)="getFavorite()">Meus Favoritos</button>
+      <button routerLink="/create-thought" class="button">Novo pensamento</button>
+    </div>
 
   </header>
 
   <div class="mural" *ngIf="listThoughts.length > 0, else noThoughts">
     <div *ngFor="let thought of listThoughts">
-      <app-thought [thought]="thought"></app-thought>
+      <app-thought 
+        [thought]="thought"
+        [listFavorite]="listFavorite">
+      </app-thought>
     </div>
   </div>
   

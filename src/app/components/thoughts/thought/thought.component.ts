@@ -16,6 +16,8 @@ export class ThoughtComponent {
     favorite: false
   }
 
+  @Input() listFavorite:Thought [] = [];
+
   constructor(
     private thoughtService:ThoughtService
   ) { }
@@ -39,7 +41,9 @@ export class ThoughtComponent {
   }
 
   updateFavorites(){
-    this.thoughtService.changeFavorite(this.thought).subscribe();
+    this.thoughtService.changeFavorite(this.thought).subscribe(() => {
+      this.listFavorite.splice(this.listFavorite.indexOf(this.thought), 1)
+    });
   }
   
 }
