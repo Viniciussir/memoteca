@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Thought } from './thought';
 import { Observable } from 'rxjs';
@@ -14,8 +14,11 @@ export class ThoughtService {
     private http: HttpClient
   ) { }
 
-  getThought(): Observable<Thought[]> {
-    return this.http.get<Thought[]>(this.API)
+  getThought(currentPage:number, limitPage:number): Observable<Thought[]> {
+    let params = new HttpParams()
+      .set('_page', currentPage)
+      .set('_limit', limitPage)
+    return this.http.get<Thought[]>(this.API, {params})
   }
 
   creactThought(thought: Thought): Observable<Thought> {

@@ -10,14 +10,29 @@ import { ThoughtService } from '../thought.service';
 export class ListThoughtComponent {
   listThoughts:Thought [] = [];
 
+  currentPage: number = 1;
+  limitPage:number = 6;
+
+  hasMoreThoughts:boolean = true;
+
   constructor(
     private thoughtService: ThoughtService
   ) { }
 
   ngOnInit(): void {
-    this.thoughtService.getThought().subscribe((listThoughts) => {
+    this.thoughtService.getThought(this.currentPage, this.limitPage).subscribe((listThoughts) => {
       this.listThoughts = listThoughts
     });
+  }
+
+  loadMoreThoughts(){
+    this.thoughtService.getThought(++this.currentPage, this.limitPage)
+      .subscribe(listThoughts => {
+      this.listThoughts.push(...listThoughts);
+      if(!listThoughts.length){
+        this.hasMoreThoughts = false;
+      }
+    })
   }
 
 }
